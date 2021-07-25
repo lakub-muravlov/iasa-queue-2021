@@ -1,0 +1,293 @@
+@import "variables";
+
+@font-face {
+	font-family: "Akrobat";
+	src: url(/public/fonts/Akrobatblack.ttf) format("ttf"),
+		url(/public/fonts/Akrobatblack.woff2) format("woff2"),
+		url(/public/fonts/Akrobatblack.woff) format("woff");
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: "Akrobat Black", sans-serif;
+	outline: none;
+}
+
+//flexbox container classes
+.flex-container {
+	display: flex;
+	width: 100%;
+	//debugging styles
+	//border: 1px solid red;
+}
+
+.col-3 {
+	width: 32.67%;
+	margin-right: 1%;
+}
+
+.col-6 {
+	width: 48%;
+	margin-left: 1%;
+	margin-right: 1%;
+	//border: 1px solid red;
+}
+
+.col-9
+  //flex direction classes
+.fd-row {
+	flex-direction: row;
+}
+
+.fd-column {
+	flex-direction: column;
+}
+
+.fd-row-reverse {
+	flex-direction: row-reverse;
+}
+
+.fd-column-reverse {
+	flex-direction: column-reverse;
+}
+
+//content alignment classes
+.jc-right {
+	justify-content: flex-end;
+}
+
+.jc-center {
+	justify-content: center;
+}
+
+.jc-left {
+	justify-content: flex-start;
+}
+
+.jc-sb {
+	justify-content: space-between;
+}
+
+.js-sa {
+	justify-content: space-around;
+}
+
+.ai-bottom {
+	align-items: flex-end;
+}
+
+.ai-center {
+	align-items: center;
+}
+
+.ai-top {
+	align-items: flex-start;
+}
+
+//admin panel
+.admin {
+	height: 100vh;
+	background-color: $grey;
+
+	.not-allowed {
+		height: 100%;
+		padding-top: 2%;
+		padding-bottom: 2%;
+
+		.header {
+			margin-bottom: 40px;
+
+			img {
+				width: 30%;
+				height: auto;
+				padding: 5px;
+			}
+
+			h1 {
+				padding: 10px;
+				color: white;
+				font-size: 3em;
+				text-align: center;
+			}
+		}
+
+		input {
+			width: 15vw;
+			height: 8vh;
+			padding-left: 3%;
+			font-size: 1.5em;
+			border-radius: 10px;
+			margin-top: 3%;
+		}
+
+		button {
+			width: 10vw;
+			height: 5vh;
+			font-size: 1.2em;
+			margin-top: 3%;
+			margin-bottom: 3%;
+			background-color: black;
+			color: $yellow;
+			border: solid black 5px;
+			border-radius: 50px;
+		}
+
+		button:hover {
+			background-color: $grey;
+		}
+
+		.login-form {
+			border: medium solid $yellow;
+			border-radius: 20px;
+		}
+	}
+
+	.allowed {
+		.form {
+			border: 1px solid $yellow;
+			padding: 5px;
+			height: 22vh;
+			margin-top: 20px;
+
+			label {
+				margin-left: 1%;
+				height: 50%;
+				font-size: 2em;
+				color: #ddd;
+			}
+
+			input,
+			button {
+				height: 25%;
+				font-size: 1.2em;
+				padding-left: 1%;
+			}
+		}
+
+		.queue-number {
+			color: white;
+			margin-top: 3%;
+			font-size: 1.5em;
+			border: red;
+		}
+
+		.queue {
+			height: 100vh !important;
+			overflow: scroll;
+		}
+	}
+}
+
+//Full queue
+.full-queue {
+	min-height: 100vh;
+	background-color: $grey;
+	h1 {
+		color: white;
+		font-size: 3em;
+		margin-top: 2%;
+		margin-bottom: 1%;
+	}
+	.link-wrap a {
+		font-size: 1.3em;
+		text-decoration: none;
+		color: $yellow;
+		margin-bottom: 1%;
+	}
+	.link-wrap a:hover {
+		text-decoration: underline;
+	}
+	.num {
+		font-size: 1.2em;
+		color: white;
+		margin-top: 10px;
+	}
+}
+
+.queue-page {
+}
+//responsive
+@media (min-width: $bp-laptop-l) {
+	.admin {
+		.not-allowed {
+			.header {
+				h1 {
+					font-size: 5em;
+				}
+			}
+
+			input {
+				font-size: 3em;
+			}
+
+			button {
+				font-size: 2.5em;
+			}
+		}
+
+		.allowed {
+			.form {
+				label {
+					font-size: 4em;
+				}
+
+				input,
+				button {
+					font-size: 2.5em;
+				}
+			}
+
+			.queue-number {
+				font-size: 3em;
+			}
+		}
+	}
+	.full-queue {
+		h1 {
+			font-size: 6em;
+		}
+		.link-wrap a {
+			font-size: 2.5em;
+		}
+		.num {
+			font-size: 3em;
+		}
+	}
+}
+
+@media (max-width: $bp-mobile-l) {
+	.admin {
+		.not-allowed {
+			.col-3 {
+				width: 80%;
+			}
+
+			input {
+				width: 50vw;
+			}
+
+			button {
+				width: 30vw;
+			}
+		}
+
+		.allowed {
+			.form {
+				label {
+					font-size: 1.5em;
+				}
+
+				input,
+				button {
+					font-size: 1.4em;
+				}
+			}
+
+			.queue-number {
+				font-size: 2em;
+			}
+		}
+	}
+}
