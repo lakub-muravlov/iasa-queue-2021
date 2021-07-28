@@ -115,13 +115,6 @@ export default {
 				this.firstSwap = 0;
 				this.secondSwap = 0;
 				return;
-			} else if (
-				this.firstSwap > this.queue.length ||
-				this.secondSwap > this.queue.length
-			) {
-				this.firstSwap = 0;
-				this.secondSwap = 0;
-				return;
 			}
 
 			try {

@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const nocache = require("nocache");
+const { type } = require("os");
 
 const app = express();
 
@@ -104,6 +105,13 @@ app.get("/api/queue-swap/", (req, res) => {
 	try {
 		if (arr.length === 1) {
 			res.send("1");
+			console.log("hui");
+			// } else {
+			// 	const f = arr.indexOf(parseInt[req.query.first]);
+			// 	const s = arr.indexOf(parseInt[req.query.second]);
+			// 	arr.splice(f, 1, arr.splice(s, 1, arr[f])[0]);
+			// 	res.send("ok");
+			// }
 		} else {
 			const f = arr.indexOf(parseInt(req.query.first));
 			const s = arr.indexOf(parseInt(req.query.second));
